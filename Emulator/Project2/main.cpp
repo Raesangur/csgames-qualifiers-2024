@@ -84,7 +84,8 @@ int main()
 		lines.push_back(line);
 	}
 	*/
-	std::ifstream file_in("input.txt");
+	//std::ifstream file_in("input.txt");
+	std::ifstream file_in("input2.txt");
 	if (!file_in) {/*error*/ }
 
 	std::string line;

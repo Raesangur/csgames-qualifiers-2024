@@ -1,0 +1,8 @@
+7
+MOV c 40
+MOV a 10
+ADD b 1
+SUB c 2
+CMP a b
+JNE 2
+XOR a a

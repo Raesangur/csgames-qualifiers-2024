@@ -1,0 +1,4 @@
+﻿  main.cpp
+OS.lib(AES.obj) : warning LNK4099: PDB 'Puzzle2Lib.pdb' n'a pu être trouvé avec 'OS.lib(AES.obj)' ou sur 'K:\csgames-qualifiers-2024\CratOS\x64\Debug\Puzzle2Lib.pdb' ; l'objet sera lié sans informations de débogage
+OS.lib(os.obj) : warning LNK4099: PDB 'Puzzle2Lib.pdb' n'a pu être trouvé avec 'OS.lib(os.obj)' ou sur 'K:\csgames-qualifiers-2024\CratOS\x64\Debug\Puzzle2Lib.pdb' ; l'objet sera lié sans informations de débogage
+  CratOS.vcxproj -> K:\csgames-qualifiers-2024\CratOS\x64\Debug\CratOSHunt.exe
