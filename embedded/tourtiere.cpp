@@ -346,7 +346,7 @@ void printFlagOnSerial()
     flagValue[8] = CALIBRATIONCOMMAND ^ 0xEC;                                             /* 0xBE ^ 0xEC  0b1101 1110 ^ 0b1110 1100 = 0b0011 0010 = 0x52 R */
     flagValue[9] = (GRAM * STARTMEASUREMENTDATA2) + 0x41;                                 /* 0x0C * 0x00 + 0x41 = 0x41 A */
     flagValue[10] = ENDPHASE2HOURS + WEIGHTPOTATOESBYTE5;                                 /* 0x19 + 0x30 = 0x49 I */
-    flagValue[11] = ((ENDPHASE1MONTH + ENDPHASE1SECONDS) * 4) - 3;                        /* 0x12 + 0x00 * 4 = 0x48 H */
+    flagValue[11] = ((ENDPHASE1MONTH + ENDPHASE1SECONDS) * 4) - 3;                        /* 0x12 + 0x00 * 4 = 0x45 E */
     flagValue[12] = ((WEIGHTPOTATOESBYTE2 / 5) * 8) + 4;                                  /* 0x32 / 5 = 10 * 8 = 80 + 4 = 84 = 0x54 T */
     flagValue[13] = ((ENDPHASE3HOURS * ENDPHASE3HOURS) >> 4) + 0xF;                       /* 0x48 H */
     flagValue[14] = (AMBIENT25DEGRECELSIUS - 6) / 4626;                                   /* 0x55 U */
