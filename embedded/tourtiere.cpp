@@ -129,7 +129,7 @@ void doWeightingState()
 {
     char buffer[10];
     Serial1.readBytes(buffer, 10);
-    if (buffer[1] == ONCE)
+    if (buffer[1] == ONCE) /* 0x0B */
     {
         Serial.println("Change les unites de ta balance!");
     }
@@ -335,28 +335,28 @@ void setRTC()
 void printFlagOnSerial()
 {
     char flagValue[23];
-    flagValue[0] = 70;  /* 0x46 F */
-    flagValue[1] = 76;  /* 0x4C L */
-    flagValue[2] = 65;  /* 0x41 A */
-    flagValue[3] = 71;  /* 0x47 G */
-    flagValue[4] = 123; /* 0xFB { */
-    flagValue[5] = CORRECTTEMPERATUREPHASE1 / 50 + 60;
+    flagValue[0] = 70;                                                                    /* 0x46 F */
+    flagValue[1] = 76;                                                                    /* 0x4C L */
+    flagValue[2] = 65;                                                                    /* 0x41 A */
+    flagValue[3] = 71;                                                                    /* 0x47 G */
+    flagValue[4] = 123;                                                                   /* 0xFB { */
+    flagValue[5] = CORRECTTEMPERATUREPHASE1 / 50 + 60;                                    /* 76 = 0x4C L */
     flagValue[6] = (STARTMEASUREMENT - ENDPHASE3DAY) / 2 - 3; /* (0xAC - 0x24) / 2 - 3 */ /* 172 - 36 / 2 - 3 = 65 = 0x41 A */
     flagValue[7] = WEIGHTPOTATOESBYTE1 + WEIGHTPOTATOESBYTE1 - 10;                        /* 0x56 V */
-    flagValue[8] = CALIBRATIONCOMMAND ^ 0xEC;                                             /* 0xBE ^ 0xEC  0b1101 1110 ^ 0b1110 1100 = 0b0011 0010 = 0x32 2 */
+    flagValue[8] = CALIBRATIONCOMMAND ^ 0xEC;                                             /* 0xBE ^ 0xEC  0b1101 1110 ^ 0b1110 1100 = 0b0011 0010 = 0x52 R */
     flagValue[9] = (GRAM * STARTMEASUREMENTDATA2) + 0x41;                                 /* 0x0C * 0x00 + 0x41 = 0x41 A */
     flagValue[10] = ENDPHASE2HOURS + WEIGHTPOTATOESBYTE5;                                 /* 0x19 + 0x30 = 0x49 I */
     flagValue[11] = ((ENDPHASE1MONTH + ENDPHASE1SECONDS) * 4) - 3;                        /* 0x12 + 0x00 * 4 = 0x48 H */
-    flagValue[12] = ((WEIGHTPOTATOESBYTE2 / 5) * 8) + 4;                                  /* 0x32 / 5 = 10 * 8 = 80 + 4 = 84 = 0x54 T*/
+    flagValue[12] = ((WEIGHTPOTATOESBYTE2 / 5) * 8) + 4;                                  /* 0x32 / 5 = 10 * 8 = 80 + 4 = 84 = 0x54 T */
     flagValue[13] = ((ENDPHASE3HOURS * ENDPHASE3HOURS) >> 4) + 0xF;                       /* 0x48 H */
     flagValue[14] = (AMBIENT25DEGRECELSIUS - 6) / 4626;                                   /* 0x55 U */
-    flagValue[15] = WEIGHTPOTATOESBYTE4 ^ 0x62;
-    flagValue[16] = (CORRECTTEMPERATUREPHASE2 / 10) + 0x10;
-    flagValue[17] = (STARTMEASUREMENTDATA1 * 2) - 29;
-    flagValue[18] = ((ENDPHASE2MINUTES + 13) * (ENDPHASE2MINUTES + 13)) - 100;
-    flagValue[19] = (MASKCALIBRATION * ONCE) - 6;
-    flagValue[20] = (WEIGHTPOTATOESBYTE3 - 30) * 3;
-    flagValue[21] = 125;
+    flagValue[15] = WEIGHTPOTATOESBYTE4 ^ 0x62;                                           /* 0x52 R */
+    flagValue[16] = (CORRECTTEMPERATUREPHASE2 / 10) + 0x10;                               /* 84 0x54 T */
+    flagValue[17] = (STARTMEASUREMENTDATA1 * 2) - 29;                                     /* 0x49 I */
+    flagValue[18] = ((ENDPHASE2MINUTES + 13) * (ENDPHASE2MINUTES + 13)) - 100;            /* 69 0x45 E*/
+    flagValue[19] = (MASKCALIBRATION * ONCE) - 6;                                         /* 0x08 * 0x0B - 6 = 82 = 0x52 R */
+    flagValue[20] = (WEIGHTPOTATOESBYTE3 - 30) * 3;                                       /* 90 E */
+    flagValue[21] = 125;                                                                  /* } */
     flagValue[22] = 0;
     Serial.println(flagValue);
 }
