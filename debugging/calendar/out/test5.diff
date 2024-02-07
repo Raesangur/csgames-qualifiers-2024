@@ -1,0 +1,7 @@
+--- out/test5.out	2024-02-07 15:49:09.541318618 -0500
++++ tests/test5.res	2024-01-09 17:01:27.000000000 -0500
+@@ -0,0 +1,4 @@
++* initial money=51 fun=52
++* Monday 1:00 -> 9:00: early work (money=59 fun=52)
++* Monday 9:00 -> 15:00: day work (money=87 fun=24)
++* Monday 15:00 -> 1:00: night work (money=105 fun=16)

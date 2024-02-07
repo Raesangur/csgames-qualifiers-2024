@@ -1,0 +1,2 @@
+mkdir -p bin/
+g++ -std=c++11 -O2 src/cpp.cpp -o bin/cpp

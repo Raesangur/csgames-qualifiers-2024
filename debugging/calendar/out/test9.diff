@@ -1,0 +1,8 @@
+--- out/test9.out	2024-02-07 15:49:09.929319826 -0500
++++ tests/test9.res	2024-01-09 17:01:28.000000000 -0500
+@@ -0,0 +1,5 @@
++* initial money=91 fun=2
++* Monday 1:00 -> 9:00: night fiesta (money=67 fun=36)
++* Monday 9:00 -> 15:00: tv (money=67 fun=37)
++* Monday 15:00 -> 1:00: night pub (money=53 fun=61)
++* Tuesday 1:00 -> 9:00: night fiesta (money=29 fun=95)
